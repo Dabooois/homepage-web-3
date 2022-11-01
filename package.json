@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "sass:compile": "sass src/assets/scss/index.scss  src/assets/css/index.css -w",
     "preview": "vite preview"
   },
   "dependencies": {

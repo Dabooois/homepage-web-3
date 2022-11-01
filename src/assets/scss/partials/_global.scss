@@ -1,0 +1,29 @@
+.container {
+  max-width: 76.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $paddingLg;
+  padding: 0 2rem;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 120rem;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.main {
+  position: relative;
+  top: 8rem;
+}

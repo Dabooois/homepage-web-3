@@ -1,0 +1,60 @@
+.card {
+  grid-gap: 2rem;
+  &__container {
+    column-gap: 2rem;
+
+    &--image {
+      img {
+        background-position: top;
+        object-fit: cover;
+        height: 14rem;
+      }
+    }
+    &--description {
+      justify-content: space-between;
+      flex-direction: column;
+
+      .number {
+        font-size: 4rem;
+        color: $dirtyWhite;
+        font-weight: 800;
+      }
+      .title {
+        font-size: $fontSize;
+        font-weight: 600;
+      }
+      .description {
+        font-size: 1.4rem;
+        color: $lightGray;
+        line-height: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    &__container {
+      &--image {
+        img {
+          height: 14rem;
+        }
+      }
+      &--description {
+        .number {
+          font-size: $fontTitle;
+          font-weight: 800;
+        }
+        .title {
+          font-size: $fontSize;
+          font-weight: 800;
+        }
+        .description {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.header {
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  box-shadow: 1px 2px 1px rgba(234, 232, 232, 0.5);
+
+  &__navigation {
+    display: grid;
+    padding: $paddingSm 0;
+    position: relative;
+
+    &--logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        height: 3.4rem;
+      }
+      .menu-icon {
+        height: 1.5rem;
+        width: 3rem;
+      }
+    }
+    &--link-container {
+      position: absolute;
+      width: 75%;
+      height: 100vh;
+      right: 0;
+      background-color: $white;
+      z-index: -10;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: $paddingLg;
+      opacity: 0;
+      padding-left: 1.5rem;
+      .close-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      .menu-links {
+        list-style: none;
+        li {
+          padding: 1rem;
+          a {
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: $lightGray;
+            &:hover {
+              color: $hoverColor;
+            }
+            &:active,
+            &:link {
+              color: $hoverColor;
+            }
+          }
+        }
+        .active {
+          color: $hoverColor;
+        }
+      }
+    }
+    .navigation-active {
+      opacity: 100;
+      z-index: 10;
+      right: -20px;
+      overflow-y: hidden;
+    }
+  }
+  .overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+    z-index: 9; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  .overlay-active {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__navigation {
+      display: flex;
+      &--logo-container {
+        .menu-icon {
+          display: none;
+        }
+      }
+      &--link-container {
+        position: static;
+        z-index: 9;
+        width: 100%;
+        height: auto;
+        opacity: 100;
+        .menu-links {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          column-gap: 2rem;
+          li {
+            a {
+              font-weight: 500;
+            }
+          }
+        }
+        .close-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}
